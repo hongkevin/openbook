@@ -6,7 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var shops = require('./routes/shops'); // 상점 로직
+var books = require('./routes/books'); // 예약 로직
+var users = require('./routes/users'); // 네이버 로그인
 
 var app = express();
 
@@ -23,6 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/shops', shops);
+app.use('/books', books);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
