@@ -42,6 +42,7 @@ router.get('/:shop_id', function(req, res, next) {
     "open_time" : "09:00:00",
     "close_time" : "21:00:00",
     "images" : array
+    // 예약 현황 이런 정보도 알아야하지 않을까? - 초록, 노랑, 빨강 과 같이 시각화로 정보 제공
   };
 
   res.json({
@@ -62,6 +63,7 @@ router.post('/', function(req, res, next) {
   var open_time = req.body.open_time;
   var close_time = req.body.close_time;
   // var images
+  // var book_price - 노쇼를 방지하기 위한 금액(혹은 최소 이용금액)
 
   res.json({
     "success" : 1,

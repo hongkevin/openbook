@@ -3,8 +3,11 @@ var router = express.Router();
 
 // 예약하기
 router.post('/', function(req, res, next) {
+  var user_id = req.body.user_id;
   var shop_id = req.body.shop_id;
-  var user_name = req.body.user_name;
+  var book_time = req.body.book_time; // 시작시간을 주면 1시간만 예약을 할 수 있도록
+  // 수용인원 이런 것도 받아봐야겠네
+  // Airbnb 의 와이파이나 이런 정보도 받아와야겠네 - PC 은 컴퓨터 성능과 같은 특수 상황
 
   res.json({
     "success" : 1,
