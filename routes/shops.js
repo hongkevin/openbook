@@ -27,11 +27,21 @@ router.get('/', function(req, res, next) {
 // 예약상점 디테일
 router.get('/:shop_id', function(req, res, next) {
   var shop_id = req.params.shop_id;
+
+  var image_url = "http://cfile28.uf.tistory.com/image/2574F033569762CF2882E1";
+  var array = [];
+  for (var i = 0; i < 10; i++) {
+    array.push(image_url);
+  }
+
   var fakeData = {
     "shop_id" : 1,
     "shop_name" : "로컬리 커피",
     "address" : "서울시 강남구 34-2",
-    "image_url" : "http://cfile28.uf.tistory.com/image/2574F033569762CF2882E1"
+    "phone" : "010-3043-1714",
+    "open_time" : "09:00:00",
+    "close_time" : "21:00:00",
+    "images" : array
   };
 
   res.json({
@@ -45,8 +55,13 @@ router.get('/:shop_id', function(req, res, next) {
 
 // 예약상점 등록
 router.post('/', function(req, res, next) {
+  var user_id = req.body.user_id;
   var shop_name = req.body.shop_name;
   var address = req.body.address;
+  var phone = req.body.phone;
+  var open_time = req.body.open_time;
+  var close_time = req.body.close_time;
+  // var images
 
   res.json({
     "success" : 1,
