@@ -1,11 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
 // 예약하기
 router.post('/', function(req, res, next) {
   var shop_id = req.body.shop_id;
